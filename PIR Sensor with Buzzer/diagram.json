@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "David John",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": -78.2, "left": 26.4, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 77.4, "left": -19.8, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 51.4,
+      "left": -106.45,
+      "rotate": 270,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -42, "left": -34.6, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -103.2,
+      "left": 299.4,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -92, "left": 69.42, "attrs": {} }
+  ],
+  "connections": [
+    [ "bz1:2", "uno:5", "green", [ "v76.8", "h-115.6" ] ],
+    [ "led1:C", "r1:2", "green", [ "v9.6", "h-38" ] ],
+    [ "led1:A", "uno:12", "green", [ "v57.6", "h124.3" ] ],
+    [ "r1:1", "uno:GND.1", "green", [ "h0" ] ],
+    [ "bz1:1", "uno:GND.3", "green", [ "v316.8", "h-38.4" ] ],
+    [ "pir1:VCC", "bb1:8b.f", "", [ "$bb" ] ],
+    [ "pir1:OUT", "bb1:9b.f", "", [ "$bb" ] ],
+    [ "pir1:GND", "bb1:10b.f", "", [ "$bb" ] ],
+    [ "pir1:VCC", "uno:5V", "red", [ "v300.73", "h-1.26" ] ],
+    [ "pir1:GND", "uno:GND.2", "black", [ "v297.6", "h-0.26" ] ],
+    [ "pir1:OUT", "uno:2", "green", [ "v67.2", "h95.86" ] ]
+  ],
+  "dependencies": {}
+}
